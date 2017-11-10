@@ -1,0 +1,404 @@
+/* DEFAULTS */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+nav,
+header,
+footer {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  margin: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: #222;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+hr {
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
+/* NAV BAR */
+
+nav {
+  width: 100%;
+  margin: 0;
+  background-color: #222;
+}
+
+nav ul {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul.limited {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav ul.nav-top li {
+  list-style: none;
+  float: left;
+}
+
+nav ul li.nav-item-right {
+  float: right;
+}
+
+nav ul.nav-top li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  padding: 14px;
+  text-align: center;
+}
+
+nav ul.nav-top li:first-child a {
+  font-weight: bold;
+  /*text-transform: uppercase;*/
+}
+
+nav ul.nav-top li a:hover {
+  background-color: black;
+}
+
+
+/* Hide trigram on non mobile */
+
+nav ul li.nav-dropdown-icon {
+  display: none;
+}
+
+
+/* Show on mobile */
+
+@media screen and (max-width: 680px) {
+  nav ul.nav-top:not(.expanded) li:not(:first-child):not(.nav-dropdown-icon) {
+    display: none;
+  }
+  nav ul li.nav-dropdown-icon {
+    display: block;
+  }
+  nav ul.expanded {
+    position: relative;
+  }
+  nav ul.nav-top.expanded li:first-child a {
+    border-bottom: 3px solid #373737;
+  }
+  nav ul.nav-top.expanded li.nav-dropdown-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  nav ul.expanded li {
+    display: inline;
+    float: none;
+  }
+  nav ul.expanded li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+
+/* CONTAINER */
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container.limited {
+  max-width: 1000px;
+}
+
+
+/* ROWS */
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.row::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+
+/* COLUMNS */
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  padding: 15px;
+}
+
+@media screen and (max-width: 680px) {
+  [class*="col-"] {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* FORM CONTROLS */
+
+.form {
+  width: 100%;
+}
+
+form.form input.form-field[type="text"] {
+  width: 300px;
+  font-size: 15px;
+  padding: 5px;
+}
+
+
+/* Form on mobile */
+
+@media screen and (max-width: 680px) {
+  form.form input.form-field[type="text"] {
+    width: 100%;
+  }
+}
+
+
+/* HERO */
+
+.hero {
+  width: 100%;
+  background: #1998F5;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#1998F5, #7EC6FF);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#1998F5, #7EC6FF);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#1998F5, #7EC6FF);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#1998F5, #7EC6FF);
+  /* Standard syntax */
+  padding: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: white;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+
+/* HEADERS */
+
+header {
+  width: 100%;
+  line-height: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid rgba(215, 215, 215, 0.7);
+}
+
+header h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+header h1 {
+  margin-top: 40px;
+}
+
+header small {
+  color: #515151;
+  margin-left: 10px;
+  font-size: 0.7em;
+}
+
+header h1+small {
+  color: #515151;
+  margin-left: 10px;
+  font-size: 1.3em;
+}
+
+header h2+small {
+  color: #515151;
+  margin-left: 10px;
+  font-size: 1em;
+}
+
+/* BOXES */
+
+div.box {
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px 0 rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px 0 rgba(0, 0, 0, .1);
+  padding: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+@media screen and (max-width: 680px) {
+  div.box {
+    padding: 5px;
+  }
+}
+
+/* BUTTONS */
+
+button.btn {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #222;
+  border: none;
+}
+
+button.btn:active {
+  background-color: #171717;
+}
+
+/* ARTICLES */
+
+article {
+  margin: 0;
+  padding: 0;
+}
+
+article p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+p {
+  line-height: 1.2;
+}
+
+/* IMAGES */
+
+img {
+  border: 2px solid #E3E3E3;
+  padding: 5px;
+}
+
+img.responsive {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* FOOTERS */
+
+footer.footer-bottom {
+  margin-top: 40px;
+  background-color: #666;
+  width: 100%;
+  min-height: 200px;
+  padding: 30px 15px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer.footer-bottom h1 {
+  font-size: 1.7em;
+}
+
+footer.footer-bottom ul {
+  padding: 0;
+  
+}
+
+footer.footer-bottom ul li {
+  list-style-type: none;
+  line-height: 1.5;
+}
+
+
+footer.footer-bottom ul li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
